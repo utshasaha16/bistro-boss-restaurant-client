@@ -1,6 +1,7 @@
 import FoodCard from "../../../components/FoodCard/FoodCard";
 
 const OrderTab = ({items}) => {
+  console.log(items);
   return (
     <div className="grid md:grid-cols-3 gap-10">
       {items.map((item) => (

@@ -28,11 +28,11 @@ const Menu = () => {
             <SectionTitle subHeading="Don't Miss" heading="today's offer"></SectionTitle>
             {/* offerd menu items */}
             <MenuCategory items={offered}></MenuCategory>
-            {/* dessert menu item */}
+            {/* salad menu item */}
             <MenuCategory
-            items={desserts}
-            title="Desserts"
-            img={dessertImg}
+            items={salad}
+            title="salads"
+            img={saladImg}
             ></MenuCategory>
             {/* pizza menu item */}
             <MenuCategory
@@ -46,11 +46,12 @@ const Menu = () => {
             title="soups"
             img={soupImg}
             ></MenuCategory>
-            {/* salad menu item */}
+            
+            {/* dessert menu item */}
             <MenuCategory
-            items={salad}
-            title="salads"
-            img={saladImg}
+            items={desserts}
+            title="Desserts"
+            img={dessertImg}
             ></MenuCategory>
         </div>
     );
