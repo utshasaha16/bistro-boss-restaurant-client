@@ -1,7 +1,7 @@
 const FoodCard = ({item}) => {
     const { recipe, price, name, image } = item;
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <div className="card bg-base-100 rounded-none shadow-xl">
       <figure>
         <img
           src={image}
