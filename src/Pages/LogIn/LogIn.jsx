@@ -8,6 +8,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const LogIn = () => {
   const [disabled, setDisabled] = useState(true);
@@ -129,6 +130,8 @@ const LogIn = () => {
                 New Here? <Link to="/signUp">Create an account</Link>
               </small>
             </p>
+            <div className="divider px-7">OR sign in with</div>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>
