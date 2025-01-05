@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const SignUp = () => {
   const {
@@ -32,6 +33,7 @@ const SignUp = () => {
 
           axiosPublic.post("/users", userInfo).then((res) => {
             if (res.data.insertedId) {
+              // reset form
               reset();
               Swal.fire({
                 position: "top-end",
@@ -164,6 +166,8 @@ const SignUp = () => {
                 Already registered? <Link to="/logIn">Go to log in</Link>
               </small>
             </p>
+            <div className="divider px-7">OR</div>
+            <SocialLogin></SocialLogin>
           </div>
         </div>
       </div>

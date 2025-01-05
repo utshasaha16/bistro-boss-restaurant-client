@@ -1,57 +1,105 @@
-import { FaAd, FaHome } from "react-icons/fa";
+import { FaAd, FaEnvelope, FaHome, FaUser, FaUsers, FaUtensils } from "react-icons/fa";
 import { FaCalendar, FaCartShopping, FaList } from "react-icons/fa6";
-import { LuSquareMenu } from "react-icons/lu";
+import { LuBookText, LuSquareMenu } from "react-icons/lu";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 
 const Dashboard = () => {
-    const [cart] = useCart();
+  const [cart] = useCart();
+
+  // TODO: get isAdmin value from database
+  const isAdmin = true;
+
   return (
     <div className="flex">
       {/* dashboard side bar */}
       <div className="w-64 min-h-screen bg-orange-400">
         <ul className="menu p-4">
-          <li>
-            <NavLink to="/deshboard/userHome">
-              <FaHome></FaHome>
-              User Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/deshboard/resevation">
-              <FaCalendar></FaCalendar>
-              Reservation
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/deshboard/cart">
-              <FaCartShopping></FaCartShopping>
-              My Cart ({cart.length})
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/deshboard/review">
-              <FaAd></FaAd>
-              Add a Review
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/deshboard/booking">
-              <FaList></FaList>
-              My Bookings
-            </NavLink>
-          </li>
+          {isAdmin ? (
+            <>
+              <li>
+                <NavLink to="/deshboard/adminHome">
+                  <FaHome></FaHome>
+                  Admin Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/addItem">
+                 <FaUtensils></FaUtensils>
+                  Add Item
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/manageItem">
+                  <FaList></FaList>
+                 Manage Item
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/bookings">
+                  <LuBookText></LuBookText>
+                  Manage Bookings
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/allUser">
+                 <FaUsers></FaUsers>
+                  All User
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/deshboard/userHome">
+                  <FaHome></FaHome>
+                  User Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/resevation">
+                  <FaCalendar></FaCalendar>
+                  Reservation
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/cart">
+                  <FaCartShopping></FaCartShopping>
+                  My Cart ({cart.length})
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/review">
+                  <FaAd></FaAd>
+                  Add a Review
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/booking">
+                  <FaList></FaList>
+                  My Bookings
+                </NavLink>
+              </li>
+            </>
+          )}
+          {/* common nav links */}
           <div className="divider"></div>
           <li>
             <NavLink to="/">
               <FaHome></FaHome>
-            Home
+              Home
             </NavLink>
           </li>
           <li>
             <NavLink to="/order/salad">
               <LuSquareMenu></LuSquareMenu>
-            Menu
+              Menu
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/order/contact">
+              <FaEnvelope></FaEnvelope>
+              Contact
             </NavLink>
           </li>
         </ul>

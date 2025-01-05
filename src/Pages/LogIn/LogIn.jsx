@@ -130,7 +130,7 @@ const LogIn = () => {
                 New Here? <Link to="/signUp">Create an account</Link>
               </small>
             </p>
-            <div className="divider px-7">OR sign in with</div>
+            <div className="divider px-7">OR</div>
             <SocialLogin></SocialLogin>
           </div>
         </div>
