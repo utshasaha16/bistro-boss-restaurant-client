@@ -28,9 +28,10 @@ const Navbar = () => {
       <li>
         <Link to="/secret">Secret</Link>
       </li>
-      <li>
-        <Link to="/dashboard/cart">
-          <button className="btn">
+      
+      <li className="">
+        <Link to="/deshboard/cart">
+          <button className="btn btn-sm ">
             <FaCartShopping className="mr-2"></FaCartShopping>
             <div className="badge badge-secondary">+{cart.length}</div>
           </button>
@@ -52,6 +53,32 @@ const Navbar = () => {
       )}
     </>
   );
+  // const navEndOption = (
+  //   <>
+  //     <li className="">
+  //       <Link to="/deshboard/cart">
+  //         <button className="btn btn-sm ">
+  //           <FaCartShopping className="mr-2"></FaCartShopping>
+  //           <div className="badge badge-secondary">+{cart.length}</div>
+  //         </button>
+  //       </Link>
+  //     </li>
+  //     {user ? (
+  //       <>
+  //         {/* <span>{user?.displayName}</span> */}
+  //         <button onClick={handleLogOut} className="btn rounded-lg btn-ghost">
+  //           LogOut
+  //         </button>
+  //       </>
+  //     ) : (
+  //       <>
+  //         <li>
+  //           <Link to="/logIn">Login</Link>
+  //         </li>
+  //       </>
+  //     )}
+  //   </>
+  // );
 
   return (
     <>
@@ -86,11 +113,8 @@ const Navbar = () => {
             <span>Restaurant</span>
           </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden md:flex ">
           <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
         </div>
       </div>
     </>
