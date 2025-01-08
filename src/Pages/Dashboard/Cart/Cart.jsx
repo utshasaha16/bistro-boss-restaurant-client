@@ -2,6 +2,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import useCart from "../../../hooks/useCart";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -44,7 +45,16 @@ const Cart = () => {
         <h2 className="text-2xl uppercase font-semibold">
           Total price: {totalPrice}
         </h2>
-        <button className="btn bg-orange-400 text-white">Pay</button>
+        {/* conditional render */}
+        {cart.length ? (
+          <Link to="/deshboard/payment">
+            <button className="btn bg-orange-400 text-white">Pay</button>
+          </Link>
+        ) : (
+          <button disabled className="btn bg-orange-400 text-white">
+            Pay
+          </button>
+        )}
       </div>
       {/* table */}
       <div className="overflow-x-auto">
