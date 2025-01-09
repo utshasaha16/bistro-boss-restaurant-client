@@ -4,6 +4,7 @@ import { LuBookText, LuSquareMenu } from "react-icons/lu";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import useAdmin from "../hooks/useAdmin";
+import { MdPayment } from "react-icons/md";
 
 const Dashboard = () => {
   const [cart] = useCart();
@@ -61,6 +62,12 @@ const Dashboard = () => {
                 <NavLink to="/deshboard/resevation">
                   <FaCalendar></FaCalendar>
                   Reservation
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/deshboard/paymentHistory">
+                  <MdPayment></MdPayment>
+                  Payment History
                 </NavLink>
               </li>
               <li>
